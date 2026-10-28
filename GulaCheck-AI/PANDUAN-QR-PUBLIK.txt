@@ -1,0 +1,36 @@
+PANDUAN AGAR QR BISA DIPINDAI ORANG LAIN (WAJIB HOSTING PUBLIK)
+
+PENYEBAB MASALAH
+Jika website dijalankan lewat Live Server, URL-nya biasanya http://127.0.0.1:5500 atau
+http://localhost:5500. Alamat ini hanya berlaku di laptop sendiri. Orang yang memindai QR
+dari HP lain tidak bisa membuka alamat localhost milik laptop Anda. Kode QR bukan masalahnya;
+website harus memiliki alamat internet publik terlebih dahulu.
+
+CARA GRATIS MEMASANG WEBSITE DI GITHUB PAGES
+1. Buat/login akun di https://github.com/
+2. Klik tombol + > New repository.
+3. Isi nama repository: gulacheck-ai, pilih Public, lalu klik Create repository.
+4. Di halaman repository, pilih Add file > Upload files.
+5. Buka folder hasil ekstrak GulaCheck-AI. Upload isi folder proyek, bukan file ZIP:
+   index.html, verifikasi.html, folder css, dan folder js.
+6. Klik Commit changes.
+7. Buka Settings > Pages.
+8. Pada Build and deployment, pilih Deploy from a branch.
+9. Branch pilih main dan folder pilih /(root), lalu klik Save.
+10. Tunggu beberapa menit sampai GitHub Pages menampilkan alamat website, contohnya:
+    https://USERNAME.github.io/gulacheck-ai/
+    Ganti USERNAME dengan username GitHub Anda dan gunakan URL yang benar-benar ditampilkan GitHub.
+11. Buka URL publik tersebut di HP untuk memastikan website dapat dibuka.
+12. Di website publik itu, isi formulir dan buat pemeriksaan BARU. QR yang baru dibuat akan
+    memakai alamat publik GitHub Pages. Unduh QR PNG tersebut dan bagikan.
+13. Tes QR dengan kamera HP lain menggunakan koneksi seluler atau perangkat yang tidak menjalankan
+    Live Server. Halaman verifikasi.html harus terbuka.
+
+PENTING
+- QR yang sebelumnya dibuat saat alamatnya localhost tidak berubah menjadi publik otomatis.
+  Setelah hosting aktif, buat ulang QR dari website publik.
+- Jangan mengetik URL contoh secara mentah. Gunakan alamat persis yang diberikan GitHub Pages.
+- QR berisi data pada URL. QR bisa menjadi panjang karena menyertakan data pemeriksaan.
+- Untuk demo ini, catatan tersimpan di dalam QR; riwayat LocalStorage tidak dibagikan antarperangkat.
+- QR menampilkan data pemeriksaan, bukan sertifikat resmi keaslian produk.
+- Proyek ini tetap prototipe: analisis berbasis aturan, dan hash bukan blockchain publik.
