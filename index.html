@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GulaCheck AI — Verifikasi Produk Gula Kelapa</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#beranda"><span class="brand-icon">✓</span> GulaCheck <span>AI</span></a>
+    <nav>
+      <a href="#beranda">Beranda</a>
+      <a href="#periksa">Periksa Produk</a>
+      <a href="#riwayat">Riwayat</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="beranda">
+      <div class="hero-copy">
+        <p class="eyebrow">VERIFIKASI PRODUK LOKAL</p>
+        <h1>Kenali asal-usul<br><span>gula kelapa.</span></h1>
+        <p class="hero-desc">Catat informasi produk, periksa indikator awal, dan telusuri riwayat verifikasi dalam satu tempat.</p>
+        <a class="button button-light" href="#periksa">Mulai pemeriksaan ↓</a>
+        <p class="disclaimer">Prototipe edukasi — hasil bukan sertifikasi keaslian atau keamanan pangan.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="sun"></div><div class="leaf leaf-one"></div><div class="leaf leaf-two"></div>
+        <div class="jar"><div class="jar-top"></div><div class="jar-label">GULA<br>KELAPA</div></div>
+        <div class="art-caption">Produk lokal · Jejak transparan</div>
+      </div>
+    </section>
+
+    <section class="section" id="periksa">
+      <div class="section-heading">
+        <p class="eyebrow">FORMULIR PEMERIKSAAN</p>
+        <h2>Periksa produk</h2>
+        <p>Masukkan data yang diketahui. Pilih “Belum diketahui” jika informasi belum tersedia.</p>
+      </div>
+      <form id="checkForm" class="panel">
+        <div class="form-grid">
+          <label>Nama produk
+            <input id="productName" required maxlength="80" placeholder="Contoh: Gula Kelapa Pak Wardi">
+          </label>
+          <label>Kode batch / produksi
+            <input id="batchCode" required maxlength="40" placeholder="Contoh: GK-001">
+          </label>
+          <label>Daerah asal
+            <input id="origin" required maxlength="100" placeholder="Contoh: Desa Pakis, Magelang">
+          </label>
+          <label>Nama produsen / kelompok
+            <input id="producer" required maxlength="100" placeholder="Nama produsen">
+          </label>
+          <label>Warna yang diamati
+            <select id="color" required>
+              <option value="">Pilih jawaban</option>
+              <option value="sesuai">Sesuai keterangan produsen/narasumber</option>
+              <option value="berbeda">Berbeda dari keterangan</option>
+              <option value="unknown">Belum diketahui</option>
+            </select>
+          </label>
+          <label>Tekstur yang diamati
+            <select id="texture" required>
+              <option value="">Pilih jawaban</option>
+              <option value="sesuai">Sesuai keterangan produsen/narasumber</option>
+              <option value="berbeda">Berbeda dari keterangan</option>
+              <option value="unknown">Belum diketahui</option>
+            </select>
+          </label>
+          <label>Aroma yang diamati
+            <select id="aroma" required>
+              <option value="">Pilih jawaban</option>
+              <option value="sesuai">Sesuai keterangan produsen/narasumber</option>
+              <option value="berbeda">Berbeda dari keterangan</option>
+              <option value="unknown">Belum diketahui</option>
+            </select>
+          </label>
+          <label>Informasi proses produksi
+            <select id="process" required>
+              <option value="">Pilih jawaban</option>
+              <option value="tercatat">Ada keterangan proses dari produsen</option>
+              <option value="tidak">Belum ada keterangan proses</option>
+            </select>
+          </label>
+        </div>
+        <label class="full-label">Catatan tambahan (opsional)
+          <textarea id="notes" rows="3" maxlength="500" placeholder="Contoh: informasi diperoleh dari wawancara produsen."></textarea>
+        </label>
+        <div class="form-actions">
+          <button class="button" type="submit">Analisis indikator</button>
+          <button class="button button-outline" type="reset">Kosongkan formulir</button>
+        </div>
+      </form>
+      <div id="result" class="panel result hidden" aria-live="polite"></div>
+    </section>
+
+    <section class="section" id="riwayat">
+      <div class="section-heading section-heading-row">
+        <div><p class="eyebrow">CATATAN DEMONSTRASI</p><h2>Riwayat verifikasi</h2><p>Riwayat tersimpan di browser pada perangkat ini.</p></div>
+        <button id="clearHistory" class="button button-outline" type="button">Hapus riwayat</button>
+      </div>
+      <div id="historyList" class="history-list"></div>
+    </section>
+
+    <section class="info-strip">
+      <div><strong>01</strong><h3>Pengetahuan lokal</h3><p>Indikator perlu dikonfirmasi kepada produsen atau narasumber yang kompeten.</p></div>
+      <div><strong>02</strong><h3>Analisis awal</h3><p>Aturan saat ini hanya memeriksa kelengkapan dan kecocokan data yang dimasukkan.</p></div>
+      <div><strong>03</strong><h3>Simulasi hash</h3><p>Hash membantu mendeteksi perubahan catatan, tetapi bukan blockchain publik.</p></div>
+    </section>
+  </main>
+
+  <footer><span>GulaCheck AI</span><span>Prototipe UTS Praktikum AI dan Blockchain</span></footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="js/verifikasi.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
